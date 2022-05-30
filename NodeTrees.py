@@ -10,24 +10,14 @@ class CreateTree():
 
         for Header in Hashmap:
             Columnindex+=1
-            print(Header)
             for AttributeList in Hashmap[Header]:
-                print(AttributeList)
                 for Attribute in AttributeList:
-                    print(Attribute)
-                    for value in AttributeList[Attribute]:
-                        print(value)
-                        for determinant in Data.Determinants:    
-                            print(determinant)
-                            if value == determinant :
-                                Tmp={determinant:self.CalculateDeterminantApperance(Columnindex,Attribute,determinant,Data)}
-                                print(AttributeList)
-                                AttributeList.update(Tmp)
-                                print(Hashmap[Header])
-                                print("Updated")
-                                print(Attribute)
-                                print(AttributeList[Attribute])
-                    print(Hashmap[Header])
+                    AttributeList[Attribute].clear()
+                    TMP={}
+                    for determinant in Data.Determinants:  
+                        TMP2={determinant:self.CalculateDeterminantApperance(Columnindex,Attribute,determinant,Data)}    
+                        TMP.update(TMP2)
+                    AttributeList[Attribute]=TMP
 
 
         return Hashmap

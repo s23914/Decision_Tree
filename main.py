@@ -26,11 +26,17 @@ class main():
 
     print("")
     print("Determinants:")
-    print()
     for value in Data.Determinants:
     
         print(value,end=" | ")
 
     Result = CreateTree(Data)
-    print (Result.NodeTrees)
-        
+    print()
+    print("+============NodeTrees==============")
+
+    for header in Result.NodeTrees:
+        print(header)
+        for Attributelist in Result.NodeTrees[header]:
+                print(Attributelist,end=": ")
+        print()
+                   
