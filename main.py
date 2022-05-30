@@ -1,13 +1,11 @@
 from FileManager import ReadAndParse 
-from DecisionTree import CreateTree
+from NodeTrees import CreateTree
 class main():
 
                    
          
     Path=('OutdoorGame')
     Data=ReadAndParse(Path)
-    print(Data.Headers)
-    print(Data.Parsed)
     print("+============FileMenager==============")
     
     i=1
@@ -28,8 +26,11 @@ class main():
 
     print("")
     print("Determinants:")
+    print()
     for value in Data.Determinants:
     
         print(value,end=" | ")
 
     Result = CreateTree(Data)
+    print (Result.NodeTrees)
+        
